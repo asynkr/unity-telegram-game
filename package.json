@@ -1,6 +1,6 @@
 {
   "name": "com.asynkrone.unitytelegramgame",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "displayName": "Unity Telegram Game",
   "description": "This package enables you to create a WebGL Telegram Game that shares score with an app.",
   "unity": "2019.1",
@@ -13,5 +13,12 @@
     "name": "Asynkrone",
     "email": "asynkr@gmail.com"
   },
-  "type": "library"
+  "type": "library",
+  "samples": [
+    {
+      "displayName": "Sample Game",
+      "description": "Contains a sample game that uses the package.",
+      "path": "Samples~/SampleGame"
+    }
+  ]
 }
