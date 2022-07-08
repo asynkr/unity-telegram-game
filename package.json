@@ -1,6 +1,6 @@
 {
   "name": "com.asynkrone.unitytelegramgame",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "displayName": "Unity Telegram Game",
   "description": "This package enables you to create a WebGL Telegram Game that shares score with an app.",
   "unity": "2019.1",
