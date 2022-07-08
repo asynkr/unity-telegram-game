@@ -1,0 +1,54 @@
+@startuml Sequence Diagram
+
+skinparam ParticipantPadding 20
+skinparam BoxPadding 10
+
+box "Client Side" #Pink
+actor "Telegram User" as TU
+participant "Frontend\n(Unity Game)" as F
+end box
+
+box "Node.js Server\n(my-website.com)"
+participant Backend as B
+end box
+
+box "Telegram" #LightBlue
+participant "Telegram Backend" as T
+end box
+
+== Initialization ==
+
+activate B
+
+TU -> T : Click on "Play" button
+activate T
+B -> T : Polling
+note right : Backend regularly\nchecks on Bot API\nto see changes
+T -> B : User requested game
+B -> T : User must be redirected\nto my-website.com
+
+T -> TU : Redirect to my-website.com
+TU -> B : Go to my-website.com
+create F
+B -> F : Serve frontend
+activate F
+F -> TU
+
+== Game starts ==
+
+group User playing
+TU -> F
+F -> TU
+end
+
+== Game ends ==
+
+F -> B : Send score\n(obfuscated)
+deactivate F
+note left: User can see this request\nbeing sent to the backend
+B -> B : Decode\nobfuscated score
+
+B -> T : Update score\nand edit leaderboard message
+T -> TU : Edit leaderboard message
+
+@enduml
