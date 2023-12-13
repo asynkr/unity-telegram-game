@@ -30,7 +30,7 @@ https://github.com/asynkr/unity-telegram-game.git
 * Call the `sendScore` method wherever and whenever you want (it does not need to be at the end of the game, nor when the user quit your app).
 * Make sure you're building for WebGL.
 
-WebGL can be hard to build sometimes, so don't hesitate to look on the Internet if your build doesn't work. To make sure the build is supposed to work, independently of the node app, you can use "Build and Run" in Unity, or upload it on a separated host (like heroku or itch.io). In particular, there can ba problems with compression. See [Unity documentation on deploying with WebGL](https://docs.unity3d.com/Manual/webgl-deploying.html). Personally, on my server, I needed to **enable the `Deconpression fallback`option** in the Player Settings.
+WebGL can be hard to build sometimes, new problems can arise from compression/optimization. To make sure the build is supposed to work, independently of the node app, you can use "Build and Run" in Unity, or upload it on a separated host (like heroku or itch.io). In particular, most common problems are with compression. See [Unity documentation on deploying with WebGL](https://docs.unity3d.com/Manual/webgl-deploying.html) and [the necessary server configs provided by Unity](https://docs.unity3d.com/Manual/webgl-server-configuration-code-samples.html). In the server config, you'll also have to properly declare the folder where your `index.html` will be. Finally, some compilation/compression options won't work. By trial and error, for example, I found that I needed to **enable the `Decompression fallback`option** in the Player Settings.
 
 ### Node.js server
 
